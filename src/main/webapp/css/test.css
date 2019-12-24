@@ -1,0 +1,147 @@
+/* 定宽居中 */
+body {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 清除默认margin和padding */
+/* 清楚浏览器的默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置图片宽度和高度 */
+/* 百分号为单位的，等价于占父类的百分比 */
+.mz {
+    width: 25%;
+}
+
+/* 导航背景*/
+.daohang {
+    width: 100%;
+    height: 35px;
+    background-color: #C43234;
+    margin: 0 auto;
+}
+
+/*!*导航内容*!*/
+.daohang li {
+    list-style: none;
+    float: left;
+    width: 14.28%;
+}
+
+.daohang a {
+
+    /*清除下划线*/
+    text-decoration: none;
+
+    color: white;
+    font: italic 16px/35px "微软雅黑";
+    width: 100%;
+
+    /*设置文本居中*/
+    display: block;
+    text-align: center;
+}
+
+.daohang a:hover {
+    background-color: #050000;
+}
+
+/*!*位置*!*/
+.weizhi {
+    font-size: 12px;
+    line-height: 30px;
+}
+
+/*!*中间盒子*!*/
+.box {
+    width: 100%;
+}
+
+.box1 {
+    display: block;
+    float: left;
+    width: 75%;
+    margin-top: 60px;
+}
+
+.box1 h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.box1 .xingxi {
+    text-align: center;
+}
+
+.neirong1 {
+    font: bold 18px/30px "微软雅黑";
+    text-indent: 2em;
+}
+
+.zuodian {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.shang {
+    fong: 14px "微软雅黑";
+    text-decoration: none;
+}
+
+.xia {
+    float: right;
+    fong: 14px "微软雅黑";
+    text-decoration: none;
+}
+
+.box2 {
+    display: block;
+    float: left;
+    width: 25%;
+    margin-top: 50px;
+}
+
+/*.xiaobiaoti{*/
+/*	background-color: #C43234;*/
+/*	height: 30px;*/
+/*	color: white;*/
+/*	font:italic 22px/30px "微软雅黑";*/
+/*	text-align: center;*/
+/*	text-decoration: none;*/
+/*}*/
+/*.cebian{*/
+/*	margin-bottom: 60px;*/
+/*}*/
+/*.tupian{*/
+/*	display: block;*/
+/*	width: 250px;*/
+/*	margin-top: 60px;*/
+/*}*/
+/*!*.box2.2 li{*/
+/*	list-style-image:  url(图片/5.png);*/
+/*}*!*/
+/*.wezhang{*/
+/*	text-decoration: none;*/
+/*}*/
+/*.box3{*/
+/*	width:100%;*/
+/*	height:150px;*/
+/*}*/
+/*.box3 img{*/
+/*	display: block;*/
+/*	float:left;*/
+/*	width:25%*/
+/*}*/
+/*.box3 span{*/
+/*	display: block;*/
+/*	wigth:75%;*/
+/*	height:130px;*/
+/*	float:left;*/
+/*	background-color: #2D2D2D;*/
+/*}*/

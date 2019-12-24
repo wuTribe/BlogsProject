@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>showArticle</title>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="js/getParameter.js" rel="script" type="text/javascript"></script>
+    <script src="js/getTime.js" rel="script" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            background-image: url('img/2.jpg');
+        }
+
+        h1, p {
+            text-align: center;
+            color: white;
+        }
+    </style>
+
+    <!--发送Ajax请求，获取文章信息-->
+    <script>
+        $(function () {
+            // 获取aid后的参数
+            var aid = getParameter("aid");
+
+            // 发送Ajax请求，获取文章信息
+            $.get("user/showArticleServlet", {aid: aid}, function (data) {
+                var time = getTime(data['time']);
+                <!--文章标题-->
+                $("#title").html("<h1>" + data['title'] + "&nbsp;&nbsp;&nbsp;" + time + "</h1>");
+                <!--文章体-->
+                $("#content").html("<p>" + data['content'] + "</p>");
+            });
+        });
+    </script>
+</head>
+<body>
+<!--标签头-->
+<div id="nav"></div>
+
+<!--等待页面加载完毕，发送Ajax请求，获取文章信息-->
+<!--文章标题-->
+<div id="title"></div>
+<!--文章体-->
+<div id="content"></div>
+</body>
+</html>
+<script>
+    // 为返回按钮添加单击事件
+    $("#back").click(function () {
+        window.location.href = "index.jsp";
+    });
+</script>
+
+<!--获取标签头-->
+<script src="js/include.js"></script>
