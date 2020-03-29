@@ -12,3 +12,10 @@ $(function () {
         $("#clock").html(getTime(time));
     }, 1000);
 });
+
+// 获取网站信息
+$(function () {
+    $.get("webInfo.html", null, function (data) {
+        $('#webInfo').html(data);
+    });
+});

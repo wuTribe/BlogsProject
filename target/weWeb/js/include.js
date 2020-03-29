@@ -7,8 +7,16 @@ $(function () {
 
 // 时钟效果
 $(function () {
+    var getTime = import('./getTime');
     var timeout = setInterval(function () {
         var time = new Date();
         $("#clock").html(getTime(time));
     }, 1000);
+});
+
+// 获取网站信息
+$(function () {
+    $.get("webInfo.html", null, function (data) {
+        $('#webInfo').html(data);
+    });
 });

@@ -37,12 +37,21 @@
 <div id="nav"></div>
 <%--  文章体  --%>
 <div class="artBody list-group"></div>
+<%-- 加入网站信息 --%>
+<div id="webInfo"></div>
 </body>
+
 </html>
+<%-- 引入统一信息 --%>
+<script src="js/include.js"></script>
 <%--获得标体信息--%>
 <script>
     $(function () {
         $.post("loadHtml/getAllArticle", null, function (data) {
+            if (data == null){
+                return;
+            }
+
             var content = "";
             for (var i = 0; i < data.length; i++) {
                 content += "\n" +
@@ -62,5 +71,3 @@
         });
     })
 </script>
-<%-- 引入导航栏 --%>
-<script src="js/include.js"></script>

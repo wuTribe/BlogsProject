@@ -29,12 +29,15 @@
     }
 </style>
 <body>
+
+<!-- 导航栏 -->
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <h1 style="text-align: center;color: white">登陆</h1>
     </div><!-- /.navbar-collapse -->
 </nav>
 
+<!-- 文本框 -->
 <div class="cent">
     <form method="post" action="user/loginServlet" class="form">
         <div class="form-group">
@@ -54,13 +57,19 @@
         <span id="message" class="bg-danger"></span><br>
     </form>
 </div>
+
+<!-- 网站信息 -->
+<div id="webInfo"></div>
 </body>
 </html>
+
+<!-- 返回按钮 -->
 <script>
     $("#back").click(function () {
         location.href = "index.jsp";
     });
 </script>
+<!-- js校验 -->
 <script>
     // 判断是否激活提交按钮
     var sub = function (usernameFlag, passwordFlag) {
@@ -127,5 +136,8 @@
         sub(usernameFlag, passwordFlag);
     });
 </script>
+
+<!-- 导入所需信息 -->
+<script src="./js/include.js"></script>
 
 

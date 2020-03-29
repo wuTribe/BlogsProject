@@ -49,6 +49,9 @@
         </a>
     </div>
 </c:forEach>
+<div id="webInfo"></div>
 </body>
 </html>
+
+<%-- 引入导航栏 --%>
 <script src="js/include.js"></script>
