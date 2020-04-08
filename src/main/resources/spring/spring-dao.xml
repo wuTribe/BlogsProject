@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!-- 关联数据库配置 -->
+  <context:property-placeholder location="classpath:database.properties"/>
+
+  <!-- 配置连接池，指定连接方式 -->
+  <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">
+    <!-- 配置连接池属性 -->
+    <property name="driverClass" value="${jdbc.driver}"/>
+    <property name="jdbcUrl" value="${jdbc.url}"/>
+    <property name="user" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+  </bean>
+
+  <!--3.数据库连接工厂sqlSessionFactory-->
+  <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="configLocation" value="classpath:mybatis-config.xml"/>
+  </bean>
+
+  <!--4.配置dao接口扫描包，动态实现了dao接口，可以注入到Spring容器中-->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--注入SQLSessionFactory-->
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    <!--需要扫描的包-->
+    <property name="basePackage" value="wu.dao"/>
+  </bean>
+</beans>

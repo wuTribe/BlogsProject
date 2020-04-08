@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/getTime.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title>welcome</title>
+    <title>personMessage</title>
+    <style>
+        .img {
+            float: left;
+            width: 20%;
+            margin-left: 20px;
+        }
+
+        .ul {
+            float: right;
+            width: 70%;
+            margin-right: 30px;
+        }
+
+        #message {
+            width: 45%;
+            margin: 75px auto;
+        }
+
+        body {
+            background-image: url('img/2.jpg');
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<div id="nav"></div>
+<!-- 显示个人信息 -->
+<div id="message" class="jumbotron clearfix">
+    <p style="text-align: center">个人信息</p>
+    <img src="img/test.gif" alt="头像" class="img-circle img">
+    <ul class="list-group ul">
+        <li class="list-group-item">创建时间：</li>
+        <li class="list-group-item time"></li>
+        <li class="list-group-item">账号：</li>
+        <li class="list-group-item username"></li>
+    </ul>
+</div>
+<div id="webInfo"></div>
+</body>
+</html>
+<!-- 引入导航栏 -->
+<script src="js/include.js"></script>
+<!-- 显示个人信息 -->
+<!-- 图片，创建时间，账号-->
+<script>
+    $(function () {
+        $.post("user/getUserService", null, function (data) {
+            $(".time").html(getTime(data["time"]));
+            $(".username").html(data["username"]);
+        });
+    });
+</script>

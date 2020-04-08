@@ -1,74 +1,20 @@
 package wu.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class User {
-    private int uid;
-    private String username;
-    private String password;
-    private ArrayList<Article> articles;
-    private Date time;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "uid=" + uid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", articles=" + articles +
-                ", time=" + time +
-                '}';
-    }
-
-    public User() {
-    }
-
-    public User(int uid, String username, String password, ArrayList<Article> articles, Date time) {
-        this.uid = uid;
-        this.username = username;
-        this.password = password;
-        this.articles = articles;
-        this.time = time;
-    }
-
-    public int getUid() {
-        return uid;
-    }
-
-    public void setUid(int uid) {
-        this.uid = uid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public ArrayList<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(ArrayList<Article> articles) {
-        this.articles = articles;
-    }
-
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class User implements Serializable {
+    private int uid; // 用户id
+    private String username; // 用户名
+    private String password; // 用户密码
+    private ArrayList<Article> articles; // 文章
+    private Date time; // 文章时间
 }
