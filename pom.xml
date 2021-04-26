@@ -33,7 +33,7 @@
     <Mybatis-generator.version>1.3.7</Mybatis-generator.version>
     <poi.version>4.0.1</poi.version>
     <lombok.version>1.18.8</lombok.version>
-    <commonsIo.version>2.4</commonsIo.version>
+    <commonsIo.version>2.7</commonsIo.version>
   </properties>
 
   <dependencies>
