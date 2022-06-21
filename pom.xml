@@ -20,7 +20,7 @@
 
     <!--统一版本管理-->
     <junit.version>4.11</junit.version>
-    <mysql.version>5.1.47</mysql.version>
+    <mysql.version>8.0.28</mysql.version>
     <c3p0.version>0.9.5.2</c3p0.version>
     <jackson.version>2.10.0</jackson.version>
     <spring.version>5.2.2.RELEASE</spring.version>
